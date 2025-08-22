@@ -1352,3 +1352,129 @@ These models improve robustness in sparse data environments like speech recognit
 * [NRC Emotion Lexicon](https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm)
 * [Aspect-Based Sentiment Analysis](https://en.wikipedia.org/wiki/Sentiment_analysis#Aspect-based_sentiment_analysis)
 
+
+
+# Natural Language Processing – Lecture 4
+
+## 📊 Empirical Laws in Language
+
+In this lecture, Prof. Pawan Goyal introduces empirical linguistic patterns found in real-world corpora, focusing on **word distributions**, **types vs. tokens**, and the distinction between **function** and **content** words.
+
+---
+
+## 🧱 Function Words vs Content Words
+
+### 📌 Function Words
+
+* Serve **grammatical roles** (e.g., *the*, *is*, *and*, *to*)
+* Include **prepositions**, **pronouns**, **auxiliary verbs**, **conjunctions**, and **articles**
+* Form a **closed class** (few new entries)
+
+### 🔤 Content Words
+
+* Carry **semantic meaning**: **nouns**, **verbs**, **adjectives**, etc.
+* Form an **open class** (new words regularly added)
+
+📖 Related: [Function and Content Words (Wikipedia)](https://en.wikipedia.org/wiki/Function_word)
+
+---
+
+## 🧪 Demonstration: Word Substitution
+
+Two modified sentences were presented:
+
+* One with **content words replaced** (meaning lost, structure visible)
+* One with **function words replaced** (structure distorted, meaning retained)
+
+**Conclusion:**
+
+* **Function words** provide **syntactic structure**
+* **Content words** convey **topic and meaning**
+
+---
+
+## 📚 Word Frequencies in a Corpus
+
+Corpus: *Tom Sawyer* by [Mark Twain](https://en.wikipedia.org/wiki/Mark_Twain)
+
+### Top Frequent Words:
+
+* “the” – 3332 times
+* “and”, “to”, “a”, “of” – all high frequency
+* Mostly **function words**
+
+### Notable Exception:
+
+* **“Tom”** appears frequently due to the topic of the book
+
+🔗 [Word Frequency](https://en.wikipedia.org/wiki/Word_frequency)
+
+---
+
+## 🔠 Type vs Token
+
+### Definitions:
+
+| Term      | Meaning                                                |
+| --------- | ------------------------------------------------------ |
+| **Token** | Each occurrence of a word in the corpus                |
+| **Type**  | Unique word (distinct spelling/form) in the vocabulary |
+
+> E.g., "will will" → 2 tokens, 1 type
+
+---
+
+## 📐 Type-Token Ratio (TTR)
+
+**TTR = Unique Words (Types) / Total Words (Tokens)**
+
+* **High TTR:** Many unique words, diverse vocabulary
+* **Low TTR:** Repetitive usage
+
+### Corpus Comparison:
+
+| Text                   | Tokens | Types  | TTR   |
+| ---------------------- | ------ | ------ | ----- |
+| *Tom Sawyer*           | 71,370 | 8,018  | 0.112 |
+| *Complete Shakespeare* | 88,400 | 29,066 | 0.329 |
+
+🔗 [Type-Token Ratio (Wikipedia)](https://en.wikipedia.org/wiki/Lexical_density#Type%E2%80%93token_ratio)
+
+---
+
+## 📰 TTR by Text Genre
+
+### Genres Compared:
+
+* **Conversation**
+* **Academic Prose**
+* **News**
+* **Fiction**
+
+### Observation:
+
+* **Conversation** tends to have the **lowest TTR** due to word repetition
+* **Academic prose** typically has the **highest TTR**
+
+📖 Related: [Corpus Linguistics](https://en.wikipedia.org/wiki/Corpus_linguistics)
+
+---
+
+## 📌 Summary
+
+* Language exhibits **predictable patterns** in word frequency
+* Distinguishing **function vs. content words** is crucial for text analysis
+* **TTR** helps measure vocabulary diversity across genres
+* Understanding these patterns lays the foundation for **language modeling**, **information retrieval**, and **text classification**
+
+---
+
+## References
+
+* [Function Word](https://en.wikipedia.org/wiki/Function_word)
+* [Word Frequency](https://en.wikipedia.org/wiki/Word_frequency)
+* [Type-Token Ratio](https://en.wikipedia.org/wiki/Lexical_density#Type%E2%80%93token_ratio)
+* [Corpus Linguistics](https://en.wikipedia.org/wiki/Corpus_linguistics)
+* [Mark Twain](https://en.wikipedia.org/wiki/Mark_Twain)
+
+
