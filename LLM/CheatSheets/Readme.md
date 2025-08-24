@@ -4,7 +4,7 @@
 
 *By Afshine Amidi & Shervine Amidi — March 23, 2025*
 
-This cheatsheet distills content from the *Super Study Guide: Transformers & Large Language Models* (\~600 illustrations, 250+ pages). More at [superstudy.guide](https://superstudy.guide).
+This cheatsheet distills content from the *Super Study Guide: Transformers & Large Language Models* (\~600 illustrations, 250+ pages). 
 
 ---
 
