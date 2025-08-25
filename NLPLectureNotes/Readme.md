@@ -94,9 +94,9 @@ This 12-week course covers the theoretical and practical aspects of [Natural Lan
 * **Type:** Unique words
 * **Type-Token Ratio (TTR):**
 
-  $$
+$$
   \text{TTR} = \frac{\text{Number of Types}}{\text{Number of Tokens}}
-  $$
+$$
 
   Indicates lexical diversity.
 
@@ -192,9 +192,9 @@ This 12-week course covers the theoretical and practical aspects of [Natural Lan
 
 * Goal: Find the most likely original sentence $S$ given the observed sentence $O$
 
-  $$
+$$
   \arg\max_S P(S|O) = \arg\max_S P(O|S) P(S)
-  $$
+$$
 
 * Components:
 
@@ -227,9 +227,9 @@ This 12-week course covers the theoretical and practical aspects of [Natural Lan
 
 * **N-Gram Model:** A type of [statistical language model](https://en.wikipedia.org/wiki/N-gram) that uses the conditional probability of a word given the preceding $n - 1$ words:
 
-  $$
+$$
   P(w_n | w_{n-1}, ..., w_{1})
-  $$
+$$
 
 * **Common N-Grams:**
 
@@ -255,9 +255,9 @@ This 12-week course covers the theoretical and practical aspects of [Natural Lan
 
 * **Perplexity:** Measures how well a probability model predicts a sample.
 
-  $$
+$$
   \text{Perplexity} = 2^{-\frac{1}{N} \sum \log_2 P(w_i)}
-  $$
+$$
 
 * Lower perplexity indicates a better model.
 
@@ -464,9 +464,9 @@ These models improve robustness in sparse data environments like speech recognit
 
 * **Exponential Form:**
 
-  $$
+$$
   P(y|x) = \frac{1}{Z(x)} \exp\left(\sum_i \lambda_i f_i(x, y)\right)
-  $$
+$$
 
 * Features $f_i(x, y)$ are binary functions indicating presence/absence of linguistic properties.
 
