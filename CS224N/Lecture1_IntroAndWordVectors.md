@@ -1,3 +1,6 @@
+# References
+- Lecture1 Notes https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1246/readings/cs224n_winter2023_lecture1_notes_draft.pdf
+- Le ture1 Slides https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1246/slides/cs224n-spr2024-lecture01-wordvecs1.pdf
 # Stanford's Intro Lecture on Language AI. Here Are the 5 Most Surprising Takeaways.
 It’s hard to ignore the explosion of AI tools like ChatGPT. They have captured the public imagination, demonstrating an almost magical ability to write, reason, and create. From drafting emails to generating code, these models are becoming a part of our daily digital lives. But while using these tools is fascinating, I’ve found that understanding the foundational principles that make them work is even more so.
 Beneath the surface of slick user interfaces lies a deep and surprisingly human story about language itself. To uncover the "secret origin story" of today's AI, I dove into the introductory lecture of Stanford's renowned course on Natural Language Processing with Deep Learning (CS224N), taught by Professor Christopher Manning. The lecture peels back the curtain, revealing that the biggest breakthroughs are not just about bigger computers, but about profound ideas concerning how we think, communicate, and create meaning.
