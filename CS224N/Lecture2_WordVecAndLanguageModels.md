@@ -124,12 +124,10 @@ $$
 
 * In classification with “one-hot” true labels (y), only the term corresponding to the correct class remains, giving:
 
-$$
   [
+  * $\log q_{y}$
+  ]
 
-  * \log q_{y}
-    ]
-$$
 
 * In PyTorch, you'll typically use **`CrossEntropyLoss`**, which combines the log-softmax + negative log likelihood internally.
 
