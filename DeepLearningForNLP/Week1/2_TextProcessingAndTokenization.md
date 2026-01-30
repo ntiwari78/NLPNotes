@@ -1,4 +1,4 @@
-
+![Tokenization](https://github.com/ntiwari78/NLPNotes/blob/main/DeepLearningForNLP/images/Tokenization.png)
 
 # 📘 Study Guide: Text Processing Basics and Tokenization
 
