@@ -1,4 +1,4 @@
-
+![NGram](https://github.com/ntiwari78/NLPNotes/blob/main/DeepLearningForNLP/images/NGram.png)
 
 ## 📘 Study Guide: N-gram Language Models
 
