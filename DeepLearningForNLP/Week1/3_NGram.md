@@ -1,5 +1,7 @@
 ![NGram](https://github.com/ntiwari78/NLPNotes/blob/main/DeepLearningForNLP/images/NGram.png)
 
+![NGram2](https://github.com/ntiwari78/NLPNotes/blob/main/DeepLearningForNLP/images/NGram2.png)
+
 ## 📘 Study Guide: N-gram Language Models
 
 ---
