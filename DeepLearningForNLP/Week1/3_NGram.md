@@ -162,3 +162,170 @@ Multiplying many small probabilities results in a number too small for computers
   * N-grams memorize specific word sequences, failing to recognize that "car" and "automobile" are semantically similar.
 
 ---
+---
+
+## 📘 Study Guide: N-gram Language Models Part 2
+
+This guide reviews smoothing techniques, evaluation strategies, generation methods, and extensions for large N-gram models. It includes a quiz with answers, essay questions, and a glossary of key terms.
+
+---
+
+### ✅ Quiz: Short-Answer Questions
+
+**1. What motivates the use of smoothing in N-gram models?**
+Smoothing addresses the zero probability problem by ensuring that unseen n-grams receive non-zero probabilities. It also helps generalize better to unseen data and redistributes probability mass across the vocabulary.
+
+**2. How does Add-one (Laplace) Smoothing work?**
+Add-one smoothing increases every count by 1. The formula adds 1 to the numerator and the size of the vocabulary (V) to the denominator to ensure all n-grams have non-zero probabilities.
+
+**3. What is Add-k smoothing, and how does it generalize Add-one smoothing?**
+Add-k (or Add-alpha) smoothing allows adding a smaller value `k` instead of 1, which softens the adjustment and avoids the overcorrection that Add-one often causes.
+
+**4. How does interpolation differ from back-off in smoothing methods?**
+Interpolation combines multiple n-gram models (e.g., trigram, bigram, unigram) using weighted averages, regardless of data availability. Back-off uses lower-order models only when higher-order models lack sufficient evidence.
+
+**5. What is the goal of intrinsic evaluation in language modeling, and which metric is commonly used?**
+Intrinsic evaluation aims to assess a model's ability to predict unseen text accurately. The primary metric is **perplexity**, which measures the inverse probability of the test set normalized by sequence length.
+
+**6. How is perplexity calculated, and what does a lower perplexity indicate?**
+Perplexity is the geometric mean of the inverse probabilities assigned to words, normalized by sequence length. Lower perplexity means the model predicts the test data more confidently and accurately.
+
+**7. What is the difference between training, development, and test sets in model evaluation?**
+
+* **Training set**: used for estimating model parameters
+* **Development set**: used for hyperparameter tuning
+* **Test set**: reserved for final, unseen evaluation
+
+**8. What is random sampling in the context of N-gram generation?**
+Random sampling involves selecting the next word from the probability distribution over the vocabulary, based on the current context. It introduces variability and creativity into generated text.
+
+**9. What is Shannon’s Visualization Method?**
+It is a technique where a user selects the next word manually from options sampled according to predicted probabilities, providing insight into how the model might behave when generating text.
+
+**10. What is the key idea behind the "Infini-gram" model?**
+The Infini-gram model uses suffix arrays and back-off strategies to allow variable-length contexts. It extends the idea of fixed-N models to dynamic-length histories, improving coherence.
+
+---
+
+### 🧠 Essay Questions
+
+1. **Explain why smoothing is necessary in language modeling.**
+   Discuss the zero-probability problem, generalization to unseen data, and compare Add-one, Add-k, interpolation, and back-off strategies.
+
+2. **Compare intrinsic vs. extrinsic evaluation of language models.**
+   Use examples such as perplexity for intrinsic evaluation and machine translation or ASR accuracy for extrinsic. Discuss the trade-offs.
+
+3. **Describe the training pipeline for an N-gram model.**
+   Include data split (training, dev, test), parameter estimation using MLE, hyperparameter tuning, and final evaluation.
+
+4. **What are the strengths and limitations of generation methods like random sampling and Shannon’s method?**
+   Contrast stochastic vs. deterministic approaches. Discuss applications, such as creative generation vs. controlled output.
+
+5. **Discuss the scalability of N-gram models and extensions like Infini-gram.**
+   Explore data structures like suffix arrays and how they enable handling longer contexts with less storage overhead.
+
+---
+
+### 📚 Glossary of Key Terms
+
+| **Term**                        | **Definition**                                                                             |
+| ------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Smoothing**                   | Techniques that assign non-zero probabilities to unseen N-grams to improve generalization. |
+| **Add-one (Laplace) Smoothing** | Adds 1 to each count and V to the denominator to avoid zero probabilities.                 |
+| **Add-k / Add-alpha Smoothing** | Generalized version of Add-one where a small constant `k` is added instead.                |
+| **Interpolation**               | Combines multiple N-gram models with weights to produce a blended probability.             |
+| **Back-off**                    | Falls back to lower-order models when higher-order context lacks data.                     |
+| **Perplexity**                  | Metric for model evaluation; lower values indicate better predictions.                     |
+| **Intrinsic Evaluation**        | Tests model prediction performance (e.g., perplexity) without downstream task use.         |
+| **Extrinsic Evaluation**        | Evaluates models based on real-world task performance (e.g., translation, ASR).            |
+| **Training Set**                | Used to learn model parameters.                                                            |
+| **Development Set**             | Used for tuning hyperparameters.                                                           |
+| **Test Set**                    | Unseen data used for final evaluation.                                                     |
+| **Random Sampling**             | Stochastic word generation based on probability distribution.                              |
+| **Shannon’s Method**            | Manual selection of next word based on model predictions for interpretability.             |
+| **Infini-gram Model**           | A scalable N-gram extension that supports variable-length context using suffix arrays.     |
+| **Suffix Arrays**               | Data structure for efficient string matching and storage of large text corpora.            |
+
+---
+---
+
+# 📘 Study Guide: N-gram Language Models
+
+This guide covers core concepts, smoothing, evaluation methods, and advanced modeling techniques like Infini-gram. It includes a **quiz with answers**, **essay prompts**, and a detailed **glossary**.
+
+---
+
+## ✅ Short-Answer Quiz
+
+**1. What is the fundamental problem that smoothing techniques are designed to solve in N-gram language models?**
+Smoothing addresses the zero-probability problem: when an unseen N-gram appears in test data, the calculated probability is zero, making the whole sentence probability zero. Smoothing assigns a small, non-zero probability to such unseen events.
+
+**2. Explain the core mechanism of "add-one" smoothing and how it adjusts the probability calculation.**
+Add-one smoothing adds 1 to the count of every possible N-gram and adds the vocabulary size (V) to the denominator. This ensures no N-gram gets a zero probability and that all probabilities remain normalized.
+
+**3. What is the primary difference between the evaluation methods of interpolation and back-off?**
+Interpolation mixes multiple N-gram probabilities (e.g., unigram, bigram, trigram) using weighted averages. Back-off uses higher-order models if data exists and "backs off" to lower-order models when evidence is insufficient.
+
+**4. Describe the distinction between extrinsic and intrinsic evaluation for language models.**
+Extrinsic evaluation tests model utility in real-world tasks like translation or speech recognition. Intrinsic evaluation assesses model performance directly on its core task—e.g., word prediction—using metrics like perplexity.
+
+**5. Define perplexity and explain what a lower perplexity score indicates about a language model's performance.**
+Perplexity is the inverse probability of a test set, normalized by word count. Lower perplexity means the model assigns higher probability to the correct data, indicating better predictive performance.
+
+**6. Why is it considered a bad practice to "train on the test set," and what potential issue does it create?**
+Training on the test set inflates model performance since the model has already seen the data. This results in overfitting and poor generalization to new, unseen data.
+
+**7. What is the specific purpose of a development set (or dev set) in the model evaluation process?**
+The development set is used to tune hyperparameters (e.g., smoothing factor `k`) without biasing the final evaluation. It ensures test results remain a fair benchmark of true performance.
+
+**8. Why is a unigram language model unsuitable for the task of predicting the next word in a sequence like "once upon a..."?**
+Unigram models assign probabilities based only on word frequency, not context. They would predict common words like "the" regardless of preceding words, failing to capture sequential dependencies.
+
+**9. What does perplexity represent intuitively as the "average branching factor" of a language model?**
+It measures how many likely next words a model considers at each step. Lower perplexity means the model is more confident and narrows its choices to fewer, more probable continuations.
+
+**10. How does the Infini-gram model improve upon traditional N-gram models, particularly in its use of context?**
+Infini-gram uses a dynamic context length, selecting the longest matching sequence from training data. This variable-length conditioning allows it to leverage longer-term dependencies beyond a fixed N.
+
+---
+
+## 🧠 Essay Questions
+
+1. **Data Partitioning**
+   Discuss why separating data into training, dev, and test sets is critical. Highlight the consequences of improper partitioning, especially regarding overfitting and evaluation bias.
+
+2. **Perplexity**
+   Explain how perplexity is derived from the chain rule and conditional probabilities. Clarify its intuitive role as a measure of uncertainty and why it is standard for intrinsic model evaluation.
+
+3. **Smoothing Progression**
+   Trace smoothing development: from zero-probability handling (add-one), to adjustable generalization (add-k), and finally to context-aware techniques (interpolation, back-off).
+
+4. **Sentence Generation**
+   Describe how sentences are generated from N-gram models. Include Shannon’s character-by-character method and contrast it with automated sampling from trigram or higher-order models.
+
+5. **Intrinsic vs. Extrinsic Evaluation**
+   Compare the two evaluation methods in depth. When might perplexity mislead? When is real-world performance more telling? Give examples from machine translation or ASR.
+
+---
+
+## 📚 Glossary of Key Terms
+
+| Term                     | Definition                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------- |
+| **Add-K Smoothing**      | Adds `k` to each N-gram count and `k × V` to the denominator.                         |
+| **Add-One Smoothing**    | Adds 1 to all N-gram counts; adjusts denominator by adding vocabulary size `V`.       |
+| **Back-off**             | Uses highest available N-gram if seen; backs off to lower-order models otherwise.     |
+| **Branching Factor**     | Intuitive interpretation of perplexity—avg. number of likely next words.              |
+| **Development Set**      | Dataset used to tune hyperparameters without affecting final evaluation.              |
+| **Extrinsic Evaluation** | Evaluation based on downstream task performance (e.g., ASR, MT).                      |
+| **Infini-gram**          | Model that uses longest seen history for prediction, allowing flexible context sizes. |
+| **Interpolation**        | Combines N-gram models with weighted probabilities to improve robustness.             |
+| **Intrinsic Evaluation** | Measures model’s performance on next-word prediction (e.g., perplexity).              |
+| **N-gram Model**         | Predicts a word based on the previous `n-1` words.                                    |
+| **Perplexity**           | Inverse probability of a test set, normalized by sequence length; lower is better.    |
+| **Smoothing**            | Assigns non-zero probability to unseen N-grams to handle data sparsity.               |
+| **Test Set**             | Final, unseen dataset used for performance reporting.                                 |
+| **Training Set**         | Data used to estimate N-gram probabilities.                                           |
+| **Vocabulary (V)**       | The set of all unique words considered by the model.                                  |
+
+---
