@@ -10,6 +10,19 @@
 - **Natural Language Processing with Transformers**
   - https://github.com/nlp-with-transformers/notebooks
 
+- https://www.nvidia.com/en-us/glossary/text-to-speech/
+- https://www.cis.upenn.edu/~cis5150/linalg-I-f.pdf
+- https://github.com/chiphuyen/aie-book/blob/main/resources.md
+- https://arxiv.org/html/2505.00579v1
+- https://github.com/patchy631/ai-engineering-hub
+- https://github.com/p-e-w/heretic
+- https://github.com/chiphuyen/aie-book
+- https://www.workatafrontierlab.com/
+- https://cleverhack.com/neolab-and-emerging-ai-lab-tracker
+- https://djdumpling.github.io/2026/01/31/frontier_training.html
+- https://www.deep-ml.com/collections
+- https://goodailist.com/countries
+
 # 30 Days NLP Study Plan
 
 **1. Basic Level (Days 1–7): Foundations & First Steps**
